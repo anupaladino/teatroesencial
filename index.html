@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teatro Esencial</title>
+  <meta name="description" content="Teatro Esencial — relatos breves, obras de teatro breves y obras de teatro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+:root{--ink:#131313;--paper:#f4f0e8;--white:#fff;--accent:#b9332f;--muted:#716d66;--line:#d7d0c5}
+body{margin:0;font-family:"DM Sans",Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5}
+a{text-decoration:none;color:inherit}.site-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:18px 4vw;border-bottom:1px solid rgba(0,0,0,.08);background:rgba(244,240,232,.94);backdrop-filter:blur(14px)}
+.brand{font-weight:600;letter-spacing:.08em}.brand span{font-family:"Playfair Display",serif;font-style:italic;font-weight:600}
+nav{display:flex;gap:24px;align-items:center;font-size:.9rem}nav a:hover{opacity:.6}.nav-cta{border:1px solid var(--ink);padding:9px 14px;border-radius:999px}
+.menu-toggle{display:none;border:0;background:none;font-size:1.4rem}
+.hero{min-height:82vh;display:grid;grid-template-columns:1.25fr .75fr;gap:5vw;align-items:center;padding:8vw 6vw 6vw}
+.hero h1,.section h2,.featured-copy h2,.modal h2{font-family:"Playfair Display",serif;font-weight:600;line-height:.98;margin:.2em 0}
+.hero h1{font-size:clamp(3rem,7vw,7rem);max-width:1000px}.hero h1 em{color:var(--accent)}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;font-weight:600;color:var(--accent)}.lead{font-size:1.25rem;max-width:630px;color:var(--muted)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);padding:14px 18px;border-radius:999px;font-weight:600;cursor:pointer;font:inherit}.button.primary{background:var(--ink);color:var(--paper)}.button.secondary{background:transparent}.button.small{padding:10px 14px;font-size:.85rem}.button.light{border-color:var(--paper);color:var(--paper)}
+.poster{aspect-ratio:4/5;background:var(--ink);color:var(--paper);padding:30px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 70px rgba(0,0,0,.15);transform:rotate(2deg)}
+.poster strong{font-family:"Playfair Display",serif;font-size:clamp(2.5rem,5vw,5rem);line-height:.9}.poster-kicker,.poster-foot{font-size:.7rem;letter-spacing:.15em}.manifesto{padding:5vw 10vw;background:var(--accent);color:#fff}.manifesto p{font-family:"Playfair Display",serif;font-size:clamp(2rem,4.4vw,4.8rem);line-height:1.05;margin:0}
+.section{padding:8vw 6vw}.section-heading{max-width:900px;margin-bottom:48px}.section-heading.inline{max-width:none;display:flex;justify-content:space-between;align-items:end}.section h2{font-size:clamp(2.6rem,5vw,5rem)}.section-intro{max-width:760px;color:var(--muted);font-size:1.1rem}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.category-card{min-height:340px;border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.category-card:hover{transform:translateY(-4px);border-color:var(--ink)}.category-card span{font-size:.75rem}.category-card h3{font-family:"Playfair Display",serif;font-size:2.4rem;line-height:1;margin:0}.category-card p{color:var(--muted)}
+.catalog-section{padding-top:3vw}.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.work-card{background:#fff;border:1px solid var(--line)}.cover{aspect-ratio:4/5;padding:22px;display:flex;flex-direction:column;justify-content:space-between;color:#fff}.cover span{font-size:.68rem;letter-spacing:.15em}.cover h3{font-family:"Playfair Display",serif;font-size:2.2rem;line-height:.9;margin:0}.cover-rain{background:linear-gradient(160deg,#24364b,#627b87)}.cover-bigben{background:linear-gradient(160deg,#1c2537,#a2793f)}.cover-korea{background:linear-gradient(160deg,#4c1919,#b8543d)}.cover-beach{background:linear-gradient(160deg,#31656d,#d7b77c)}.work-copy{padding:20px}.work-copy .meta{font-size:.75rem;color:var(--accent);font-weight:600}.work-copy h3{font-family:"Playfair Display",serif;font-size:1.7rem;margin:.25rem 0}.work-copy p{color:var(--muted)}.card-actions{margin-top:18px}
+.dark-section{background:var(--ink);color:var(--paper)}.dark-section .eyebrow{color:#e5a59f}.featured-work{display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw;align-items:center}.featured-poster{aspect-ratio:4/5;background:linear-gradient(145deg,#742d29,#171717);padding:32px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #444}.featured-poster h3{font-family:"Playfair Display",serif;font-size:clamp(3rem,5vw,5.5rem);line-height:.85;margin:0}.featured-copy h2{font-size:clamp(3rem,6vw,6rem)}.big-copy{font-size:1.4rem;max-width:700px;color:#d3cec6}.specs{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.specs span{border:1px solid #555;padding:8px 10px;border-radius:999px;font-size:.8rem}
+.empty-state{border:1px solid var(--line);padding:5vw;text-align:center}.empty-state span{font-size:.7rem;letter-spacing:.15em;color:var(--accent)}.empty-state h3{font-family:"Playfair Display",serif;font-size:2.5rem;margin:.4em 0}
+.author-section{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;background:#e6ded1}.author-copy{font-family:"Playfair Display",serif;font-size:clamp(1.7rem,3vw,3rem);line-height:1.15}
+.rights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:40px 0}.rights-grid>div{border-top:1px solid var(--ink);padding-top:20px}.step{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:.8rem}.rights-grid h3{font-family:"Playfair Display",serif;font-size:1.8rem}.rights-grid p{color:var(--muted)}
+.contact-section{background:#fff}.contact-form{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px}.contact-form label{display:flex;flex-direction:column;gap:8px;font-size:.85rem;font-weight:600}.contact-form .full{grid-column:1/-1}.contact-form input,.contact-form select,.contact-form textarea{font:inherit;padding:14px;border:1px solid var(--line);background:#faf8f3;border-radius:0}.contact-form .button{width:max-content}.form-note{grid-column:1/-1;color:var(--muted);font-size:.78rem}
+footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
+.text-button{border:0;background:none;text-decoration:underline;cursor:pointer}
+.modal{position:fixed;inset:0;display:none;z-index:50}.modal.active{display:block}.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.65)}.modal-panel{position:absolute;right:0;top:0;width:min(650px,92vw);height:100%;background:var(--paper);padding:8vw 5vw 5vw;overflow:auto}.modal-close{position:absolute;top:20px;right:24px;border:0;background:none;font-size:2.3rem;cursor:pointer}.modal h2{font-size:clamp(2.8rem,6vw,5rem)}.modal-description{font-family:"Playfair Display",serif;font-size:1.6rem;line-height:1.25}.modal-extra{color:var(--muted)}.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+@media(max-width:900px){nav{display:none;position:absolute;top:70px;left:0;right:0;background:var(--paper);padding:24px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu-toggle{display:block}.hero{grid-template-columns:1fr;padding-top:14vw}.hero-art{max-width:460px}.category-grid,.rights-grid{grid-template-columns:1fr}.work-grid{grid-template-columns:repeat(2,1fr)}.featured-work,.author-section{grid-template-columns:1fr}.contact-form{grid-template-columns:1fr}.contact-form .full{grid-column:auto}}
+@media(max-width:560px){.work-grid{grid-template-columns:1fr}.hero{padding:20vw 5vw 12vw}.section{padding:16vw 5vw}.section-heading.inline{display:block}.category-card{min-height:260px}footer{flex-direction:column}.featured-poster{max-width:420px}}
+
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio">TEATRO <span>ESENCIAL</span></a>
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+    <nav>
+      <a href="#relatos">Relatos</a>
+      <a href="#teatro-breve">Teatro breve</a>
+      <a href="#obras">Obras de teatro</a>
+      <a href="#autor">Autor</a>
+      <a href="#derechos">Derechos</a>
+      <a class="nav-cta" href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">DRAMATURGIA · RELATOS · HISTORIAS</p>
+        <h1>Historias breves sobre esa extraña costumbre de <em>ser humanos.</em></h1>
+        <p class="lead">Relatos para leer. Obras para imaginar. Teatro para llevar a escena.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#catalogo">Descubrir las obras</a>
+          <a class="button secondary" href="#derechos">Derechos de representación</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="poster poster-main">
+          <span class="poster-kicker">TEATRO ESENCIAL</span>
+          <strong>LO HUMANO<br>EN ESCENA</strong>
+          <span class="poster-foot">Textos de Hernán Laperuta</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <p>Una biblioteca de historias donde lo cotidiano se vuelve raro, lo absurdo se vuelve posible y cada personaje esconde algo demasiado humano.</p>
+    </section>
+
+    <section id="catalogo" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">CATÁLOGO</p>
+        <h2>Elegí por dónde entrar.</h2>
+      </div>
+
+      <div class="category-grid">
+        <a class="category-card" href="#relatos">
+          <span>01</span>
+          <h3>Relatos breves</h3>
+          <p>Historias para leer de una sentada y recordar mucho después.</p>
+          <b>Ver relatos →</b>
+        </a>
+        <a class="category-card" href="#teatro-breve">
+          <span>02</span>
+          <h3>Obras de teatro breves</h3>
+          <p>Textos ágiles, intensos y pensados para llevar a escena.</p>
+          <b>Ver teatro breve →</b>
+        </a>
+        <a class="category-card" href="#obras">
+          <span>03</span>
+          <h3>Obras de teatro</h3>
+          <p>Propuestas completas para compañías, directores y lectores.</p>
+          <b>Ver obras →</b>
+        </a>
+      </div>
+    </section>
+
+    <section id="relatos" class="section catalog-section">
+      <div class="section-heading inline">
+        <div>
+          <p class="eyebrow">RELATOS BREVES</p>
+          <h2>Historias para leer.</h2>
+        </div>
+        <button class="text-button" data-filter="relato">Ver todos</button>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card">
+          <div class="cover cover-rain">
+            <span>RELATO</span>
+            <h3>La chica<br>en la lluvia</h3>
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Nostalgia</p>
+            <h3>La chica en la lluvia</h3>
+            <p>Una escena bajo la lluvia despierta una revelación simple, íntima y profundamente humana.</p>
+            <div class="card-actions">
+              <button class="button small primary open-modal"
+                data-title="La chica en la lluvia"
+                data-type="Relato breve"
+                data-description="Una escena cotidiana bajo una lluvia intensa se transforma en una mirada sobre el paso del tiempo, la memoria y aquello que alguna vez fuimos."
+                data-extra="Lectura estimada: 10–15 minutos">Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="cover cover-bigben">
+            <span>RELATO</span>
+            <h3>Las 12<br>del Big Ben</h3>
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Memoria</p>
+            <h3>Las 12 del Big Ben</h3>
+            <p>Un viaje juvenil a Inglaterra y el descubrimiento de una pasión capaz de cambiar una vida.</p>
+            <div class="card-actions">
+              <button class="button small primary open-modal"
+                data-title="Las 12 del Big Ben"
+                data-type="Relato breve"
+                data-description="Durante un viaje de rugby a las Islas Británicas, un joven descubre el teatro musical y comprende que algunas pasiones aparecen una sola vez y dejan marca para siempre."
+                data-extra="Lectura estimada: 15–20 minutos">Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="cover cover-korea">
+            <span>RELATO</span>
+            <h3>Un cuento<br>coreano</h3>
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Humor negro</p>
+            <h3>Un cuento coreano</h3>
+            <p>Una noche de 1993, un auto, una pelea callejera y una historia que escala más de lo esperado.</p>
+            <div class="card-actions">
+              <button class="button small primary open-modal"
+                data-title="Un cuento coreano"
+                data-type="Relato breve"
+                data-description="Una situación absurda y tensa, narrada con humor negro, donde un incidente callejero se convierte en una pequeña fábula urbana."
+                data-extra="Ambientado en 1993">Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="cover cover-beach">
+            <span>RELATO</span>
+            <h3>La 303<br>en Mar del Plata</h3>
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Memoria familiar</p>
+            <h3>La 303 en Mar del Plata</h3>
+            <p>Veranos, familia y una carpa de playa convertida en territorio de la memoria.</p>
+            <div class="card-actions">
+              <button class="button small primary open-modal"
+                data-title="La 303 en Mar del Plata"
+                data-type="Relato breve"
+                data-description="Un relato de infancia y nostalgia alrededor de los veranos familiares en Punta Mogotes y una carpa que termina guardando mucho más que objetos."
+                data-extra="Memoria autobiográfica">Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="teatro-breve" class="section dark-section">
+      <div class="section-heading inline">
+        <div>
+          <p class="eyebrow">TEATRO BREVE</p>
+          <h2>Textos para subir a escena.</h2>
+        </div>
+      </div>
+
+      <article class="featured-work">
+        <div class="featured-poster">
+          <span class="poster-kicker">COMEDIA · 7 OBRAS BREVES</span>
+          <h3>NaturRareza<br>Humana</h3>
+          <p>Estudio escénico de una especie impredecible.</p>
+        </div>
+        <div class="featured-copy">
+          <p class="eyebrow">DESTACADA</p>
+          <h2>NaturRareza Humana</h2>
+          <p class="big-copy">Una comedia de realismo mágico compuesta por siete obras cortas que desnudan lo locos y raros que podemos ser los seres humanos.</p>
+          <div class="specs">
+            <span>7 obras breves</span>
+            <span>Comedia</span>
+            <span>Realismo mágico</span>
+            <span>Elenco flexible</span>
+          </div>
+          <div class="hero-actions">
+            <button class="button primary open-modal"
+              data-title="NaturRareza Humana"
+              data-type="Ciclo de teatro breve"
+              data-description="Siete historias. Siete niveles. Un recorrido por comportamientos, obsesiones, contradicciones y rarezas que hacen de nuestra especie un animal difícil de clasificar."
+              data-extra="Comedia · 7 obras breves · Elenco flexible">Ver ficha</button>
+            <a class="button secondary light" href="#derechos">Consultar derechos</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="obras" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">OBRAS DE TEATRO</p>
+        <h2>Obras completas.</h2>
+        <p class="section-intro">Esta sección queda preparada para incorporar obras de mayor duración con ficha técnica, elenco, necesidades de producción, fragmento y solicitud de derechos.</p>
+      </div>
+      <div class="empty-state">
+        <span>PRÓXIMAMENTE</span>
+        <h3>Nuevas obras completas</h3>
+        <p>El catálogo irá creciendo con nuevas piezas y materiales para compañías y directores.</p>
+      </div>
+    </section>
+
+    <section id="autor" class="section author-section">
+      <div>
+        <p class="eyebrow">EL AUTOR</p>
+        <h2>Hernán Laperuta</h2>
+      </div>
+      <div class="author-copy">
+        <p>Teatro Esencial reúne relatos y dramaturgia centrados en una obsesión: observar al ser humano cuando la normalidad empieza a resquebrajarse.</p>
+        <p>Historias breves, personajes reconocibles y situaciones donde el humor, la nostalgia, la incomodidad y lo inesperado conviven en escena.</p>
+      </div>
+    </section>
+
+    <section id="derechos" class="section rights-section">
+      <div class="section-heading">
+        <p class="eyebrow">DERECHOS DE REPRESENTACIÓN</p>
+        <h2>¿Querés montar una obra?</h2>
+        <p class="section-intro">La compra de un texto permite su lectura personal. La representación pública requiere autorización específica.</p>
+      </div>
+      <div class="rights-grid">
+        <div>
+          <span class="step">1</span>
+          <h3>Elegí la obra</h3>
+          <p>Revisá la sinopsis, duración, elenco y necesidades de producción.</p>
+        </div>
+        <div>
+          <span class="step">2</span>
+          <h3>Contanos el proyecto</h3>
+          <p>Compañía, ciudad, sala, cantidad de funciones y fechas tentativas.</p>
+        </div>
+        <div>
+          <span class="step">3</span>
+          <h3>Recibí condiciones</h3>
+          <p>Te responderemos con disponibilidad, autorización y condiciones de representación.</p>
+        </div>
+      </div>
+      <a class="button primary" href="#contacto">Solicitar derechos</a>
+    </section>
+
+    <section id="contacto" class="section contact-section">
+      <div class="section-heading">
+        <p class="eyebrow">CONTACTO</p>
+        <h2>Hablemos de historias.</h2>
+      </div>
+
+      <form id="contact-form" class="contact-form">
+        <label>
+          Nombre
+          <input type="text" name="nombre" placeholder="Tu nombre" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="tu@email.com" required />
+        </label>
+        <label>
+          Motivo
+          <select name="motivo">
+            <option>Consulta general</option>
+            <option>Comprar un texto</option>
+            <option>Derechos de representación</option>
+            <option>Propuesta editorial</option>
+          </select>
+        </label>
+        <label>
+          Obra
+          <input type="text" name="obra" placeholder="Título de la obra o relato" />
+        </label>
+        <label class="full">
+          Mensaje
+          <textarea name="mensaje" rows="6" placeholder="Contame qué necesitás..." required></textarea>
+        </label>
+        <button class="button primary" type="submit">Preparar mensaje</button>
+        <p class="form-note">Esta versión prepara el mensaje en tu programa de correo. Al publicar el sitio podemos conectarlo a un formulario real.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#inicio">TEATRO <span>ESENCIAL</span></a>
+    <p>Relatos · Teatro breve · Obras de teatro</p>
+    <p>© <span id="year"></span> Teatro Esencial</p>
+  </footer>
+
+  <div class="modal" id="work-modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <button class="modal-close" aria-label="Cerrar">×</button>
+      <p class="eyebrow" id="modal-type"></p>
+      <h2 id="modal-title"></h2>
+      <p class="modal-description" id="modal-description"></p>
+      <p class="modal-extra" id="modal-extra"></p>
+      <div class="modal-actions">
+        <a href="#contacto" class="button primary modal-contact">Consultar / comprar</a>
+        <a href="#derechos" class="button secondary modal-contact">Derechos de representación</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+const menuToggle=document.querySelector(".menu-toggle");
+const nav=document.querySelector("nav");
+menuToggle.addEventListener("click",()=>nav.classList.toggle("open"));
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const modal=document.getElementById("work-modal");
+const openButtons=document.querySelectorAll(".open-modal");
+const closeModal=()=>{modal.classList.remove("active");modal.setAttribute("aria-hidden","true")};
+openButtons.forEach(btn=>btn.addEventListener("click",()=>{
+  document.getElementById("modal-title").textContent=btn.dataset.title;
+  document.getElementById("modal-type").textContent=btn.dataset.type;
+  document.getElementById("modal-description").textContent=btn.dataset.description;
+  document.getElementById("modal-extra").textContent=btn.dataset.extra || "";
+  modal.classList.add("active");
+  modal.setAttribute("aria-hidden","false");
+}));
+document.querySelector(".modal-close").addEventListener("click",closeModal);
+document.querySelector(".modal-backdrop").addEventListener("click",closeModal);
+document.querySelectorAll(".modal-contact").forEach(a=>a.addEventListener("click",closeModal));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+
+document.getElementById("contact-form").addEventListener("submit",(e)=>{
+  e.preventDefault();
+  const data=new FormData(e.target);
+  const subject=encodeURIComponent("Consulta Teatro Esencial — "+(data.get("obra")||data.get("motivo")));
+  const body=encodeURIComponent(
+    "Nombre: "+data.get("nombre")+"\n"+
+    "Email: "+data.get("email")+"\n"+
+    "Motivo: "+data.get("motivo")+"\n"+
+    "Obra: "+data.get("obra")+"\n\n"+
+    data.get("mensaje")
+  );
+  window.location.href=`mailto:?subject=${subject}&body=${body}`;
+});
+
+</script>
+</body>
+</html>

@@ -3,41 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teatro Esencial</title>
-  <meta name="description" content="Teatro Esencial — relatos breves, obras de teatro breves y obras de teatro." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-  <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-:root{--ink:#131313;--paper:#f4f0e8;--white:#fff;--accent:#b9332f;--muted:#716d66;--line:#d7d0c5}
-body{margin:0;font-family:"DM Sans",Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5}
-a{text-decoration:none;color:inherit}.site-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:18px 4vw;border-bottom:1px solid rgba(0,0,0,.08);background:rgba(244,240,232,.94);backdrop-filter:blur(14px)}
-.brand{font-weight:600;letter-spacing:.08em}.brand span{font-family:"Playfair Display",serif;font-style:italic;font-weight:600}
-nav{display:flex;gap:24px;align-items:center;font-size:.9rem}nav a:hover{opacity:.6}.nav-cta{border:1px solid var(--ink);padding:9px 14px;border-radius:999px}
-.menu-toggle{display:none;border:0;background:none;font-size:1.4rem}
-.hero{min-height:82vh;display:grid;grid-template-columns:1.25fr .75fr;gap:5vw;align-items:center;padding:8vw 6vw 6vw}
-.hero h1,.section h2,.featured-copy h2,.modal h2{font-family:"Playfair Display",serif;font-weight:600;line-height:.98;margin:.2em 0}
-.hero h1{font-size:clamp(3rem,7vw,7rem);max-width:1000px}.hero h1 em{color:var(--accent)}
-.eyebrow{font-size:.72rem;letter-spacing:.18em;font-weight:600;color:var(--accent)}.lead{font-size:1.25rem;max-width:630px;color:var(--muted)}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);padding:14px 18px;border-radius:999px;font-weight:600;cursor:pointer;font:inherit}.button.primary{background:var(--ink);color:var(--paper)}.button.secondary{background:transparent}.button.small{padding:10px 14px;font-size:.85rem}.button.light{border-color:var(--paper);color:var(--paper)}
-.poster{aspect-ratio:4/5;background:var(--ink);color:var(--paper);padding:30px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 70px rgba(0,0,0,.15);transform:rotate(2deg)}
-.poster strong{font-family:"Playfair Display",serif;font-size:clamp(2.5rem,5vw,5rem);line-height:.9}.poster-kicker,.poster-foot{font-size:.7rem;letter-spacing:.15em}.manifesto{padding:5vw 10vw;background:var(--accent);color:#fff}.manifesto p{font-family:"Playfair Display",serif;font-size:clamp(2rem,4.4vw,4.8rem);line-height:1.05;margin:0}
-.section{padding:8vw 6vw}.section-heading{max-width:900px;margin-bottom:48px}.section-heading.inline{max-width:none;display:flex;justify-content:space-between;align-items:end}.section h2{font-size:clamp(2.6rem,5vw,5rem)}.section-intro{max-width:760px;color:var(--muted);font-size:1.1rem}
-.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.category-card{min-height:340px;border:1px solid var(--line);padding:28px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.category-card:hover{transform:translateY(-4px);border-color:var(--ink)}.category-card span{font-size:.75rem}.category-card h3{font-family:"Playfair Display",serif;font-size:2.4rem;line-height:1;margin:0}.category-card p{color:var(--muted)}
-.catalog-section{padding-top:3vw}.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.work-card{background:#fff;border:1px solid var(--line)}.cover{aspect-ratio:4/5;padding:22px;display:flex;flex-direction:column;justify-content:space-between;color:#fff}.cover span{font-size:.68rem;letter-spacing:.15em}.cover h3{font-family:"Playfair Display",serif;font-size:2.2rem;line-height:.9;margin:0}.cover-rain{background:linear-gradient(160deg,#24364b,#627b87)}.cover-bigben{background:linear-gradient(160deg,#1c2537,#a2793f)}.cover-korea{background:linear-gradient(160deg,#4c1919,#b8543d)}.cover-beach{background:linear-gradient(160deg,#31656d,#d7b77c)}.work-copy{padding:20px}.work-copy .meta{font-size:.75rem;color:var(--accent);font-weight:600}.work-copy h3{font-family:"Playfair Display",serif;font-size:1.7rem;margin:.25rem 0}.work-copy p{color:var(--muted)}.card-actions{margin-top:18px}
-.dark-section{background:var(--ink);color:var(--paper)}.dark-section .eyebrow{color:#e5a59f}.featured-work{display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw;align-items:center}.featured-poster{aspect-ratio:4/5;background:linear-gradient(145deg,#742d29,#171717);padding:32px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #444}.featured-poster h3{font-family:"Playfair Display",serif;font-size:clamp(3rem,5vw,5.5rem);line-height:.85;margin:0}.featured-copy h2{font-size:clamp(3rem,6vw,6rem)}.big-copy{font-size:1.4rem;max-width:700px;color:#d3cec6}.specs{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.specs span{border:1px solid #555;padding:8px 10px;border-radius:999px;font-size:.8rem}
-.empty-state{border:1px solid var(--line);padding:5vw;text-align:center}.empty-state span{font-size:.7rem;letter-spacing:.15em;color:var(--accent)}.empty-state h3{font-family:"Playfair Display",serif;font-size:2.5rem;margin:.4em 0}
-.author-section{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;background:#e6ded1}.author-copy{font-family:"Playfair Display",serif;font-size:clamp(1.7rem,3vw,3rem);line-height:1.15}
-.rights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:40px 0}.rights-grid>div{border-top:1px solid var(--ink);padding-top:20px}.step{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:.8rem}.rights-grid h3{font-family:"Playfair Display",serif;font-size:1.8rem}.rights-grid p{color:var(--muted)}
-.contact-section{background:#fff}.contact-form{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px}.contact-form label{display:flex;flex-direction:column;gap:8px;font-size:.85rem;font-weight:600}.contact-form .full{grid-column:1/-1}.contact-form input,.contact-form select,.contact-form textarea{font:inherit;padding:14px;border:1px solid var(--line);background:#faf8f3;border-radius:0}.contact-form .button{width:max-content}.contact-form .button:disabled{cursor:wait;opacity:.65}.form-note{grid-column:1/-1;color:var(--muted);font-size:.78rem}.form-status{grid-column:1/-1;margin:0;font-size:.9rem;font-weight:600}.form-status.success{color:#287a3e}.form-status.error{color:var(--accent)}
-footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
-.text-button{border:0;background:none;text-decoration:underline;cursor:pointer}
-.modal{position:fixed;inset:0;display:none;z-index:50}.modal.active{display:block}.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.65)}.modal-panel{position:absolute;right:0;top:0;width:min(650px,92vw);height:100%;background:var(--paper);padding:8vw 5vw 5vw;overflow:auto}.modal-close{position:absolute;top:20px;right:24px;border:0;background:none;font-size:2.3rem;cursor:pointer}.modal h2{font-size:clamp(2.8rem,6vw,5rem)}.modal-description{font-family:"Playfair Display",serif;font-size:1.6rem;line-height:1.25}.modal-extra{color:var(--muted)}.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
-@media(max-width:900px){nav{display:none;position:absolute;top:70px;left:0;right:0;background:var(--paper);padding:24px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu-toggle{display:block}.hero{grid-template-columns:1fr;padding-top:14vw}.hero-art{max-width:460px}.category-grid,.rights-grid{grid-template-columns:1fr}.work-grid{grid-template-columns:repeat(2,1fr)}.featured-work,.author-section{grid-template-columns:1fr}.contact-form{grid-template-columns:1fr}.contact-form .full{grid-column:auto}}
-@media(max-width:560px){.work-grid{grid-template-columns:1fr}.hero{padding:20vw 5vw 12vw}.section{padding:16vw 5vw}.section-heading.inline{display:block}.category-card{min-height:260px}footer{flex-direction:column}.featured-poster{max-width:420px}}
+  <title>Teatro Esencial | Relatos y dramaturgia de Hernán Laperuta</title>
+  <meta name="description" content="Relatos breves, teatro breve y obras para leer, imaginar y llevar a escena. Descubrí el universo de Teatro Esencial, con textos de Hernán Laperuta." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#f4f0e8" />
+  <link rel="canonical" href="https://teatroesencial.com.ar/" />
 
-</style>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Teatro Esencial" />
+  <meta property="og:title" content="Teatro Esencial | Relatos y dramaturgia de Hernán Laperuta" />
+  <meta property="og:description" content="Relatos breves, teatro breve y obras para leer, imaginar y llevar a escena. Explorá historias donde lo cotidiano se vuelve raro y profundamente humano." />
+  <meta property="og:url" content="https://teatroesencial.com.ar/" />
+  <meta property="og:image" content="https://teatroesencial.com.ar/og-teatro-esencial.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_AR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Teatro Esencial | Relatos y dramaturgia de Hernán Laperuta" />
+  <meta name="twitter:description" content="Relatos breves, teatro breve y obras para leer, imaginar y llevar a escena." />
+  <meta name="twitter:image" content="https://teatroesencial.com.ar/og-teatro-esencial.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
@@ -67,7 +57,7 @@ footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;bord
       <div class="hero-art" aria-hidden="true">
         <div class="poster poster-main">
           <span class="poster-kicker">TEATRO ESENCIAL</span>
-          <strong>LO HUMANO<br>EN ESCENA</strong>
+          <strong>LO HUMANO<br />EN ESCENA</strong>
           <span class="poster-foot">Textos de Hernán Laperuta</span>
         </div>
       </div>
@@ -106,19 +96,16 @@ footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;bord
     </section>
 
     <section id="relatos" class="section catalog-section">
-      <div class="section-heading inline">
-        <div>
-          <p class="eyebrow">RELATOS BREVES</p>
-          <h2>Historias para leer.</h2>
-        </div>
-        <button class="text-button" data-filter="relato">Ver todos</button>
+      <div class="section-heading">
+        <p class="eyebrow">RELATOS BREVES</p>
+        <h2>Historias para leer.</h2>
       </div>
 
       <div class="work-grid">
         <article class="work-card">
           <div class="cover cover-rain">
             <span>RELATO</span>
-            <h3>La chica<br>en la lluvia</h3>
+            <h3>La chica<br />en la lluvia</h3>
           </div>
           <div class="work-copy">
             <p class="meta">Relato breve · Nostalgia</p>
@@ -137,7 +124,7 @@ footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;bord
         <article class="work-card">
           <div class="cover cover-bigben">
             <span>RELATO</span>
-            <h3>Las 12<br>del Big Ben</h3>
+            <h3>Las 12<br />del Big Ben</h3>
           </div>
           <div class="work-copy">
             <p class="meta">Relato breve · Memoria</p>
@@ -156,7 +143,7 @@ footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;bord
         <article class="work-card">
           <div class="cover cover-korea">
             <span>RELATO</span>
-            <h3>Un cuento<br>coreano</h3>
+            <h3>Un cuento<br />coreano</h3>
           </div>
           <div class="work-copy">
             <p class="meta">Relato breve · Humor negro</p>
@@ -175,7 +162,7 @@ footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;bord
         <article class="work-card">
           <div class="cover cover-beach">
             <span>RELATO</span>
-            <h3>La 303<br>en Mar del Plata</h3>
+            <h3>La 303<br />en Mar del Plata</h3>
           </div>
           <div class="work-copy">
             <p class="meta">Relato breve · Memoria familiar</p>
@@ -194,17 +181,15 @@ footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;bord
     </section>
 
     <section id="teatro-breve" class="section dark-section">
-      <div class="section-heading inline">
-        <div>
-          <p class="eyebrow">TEATRO BREVE</p>
-          <h2>Textos para subir a escena.</h2>
-        </div>
+      <div class="section-heading">
+        <p class="eyebrow">TEATRO BREVE</p>
+        <h2>Textos para subir a escena.</h2>
       </div>
 
       <article class="featured-work">
         <div class="featured-poster">
           <span class="poster-kicker">COMEDIA · 7 OBRAS BREVES</span>
-          <h3>NaturRareza<br>Humana</h3>
+          <h3>NaturRareza<br />Humana</h3>
           <p>Estudio escénico de una especie impredecible.</p>
         </div>
         <div class="featured-copy">
@@ -317,16 +302,16 @@ footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;bord
           Mensaje
           <textarea name="mensaje" rows="6" placeholder="Contame qué necesitás..." required></textarea>
         </label>
-        <button class="button primary" type="submit">Enviar mensaje</button>
-        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-        <p class="form-note">Los datos enviados se utilizarán únicamente para responder esta consulta.</p>
+        <div class="form-actions full">
+          <button class="button primary" type="submit">Enviar mensaje</button>
+          <p class="form-note">Los datos enviados se utilizarán únicamente para responder esta consulta.</p>
+        </div>
+        <p id="form-status" class="form-status full" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
 
   <footer>
-    <a class="brand" href="#inicio">TEATRO <span>ESENCIAL</span></a>
-    <p>Relatos · Teatro breve · Obras de teatro</p>
     <p>© <span id="year"></span> Teatro Esencial</p>
   </footer>
 
@@ -345,62 +330,6 @@ footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;bord
     </div>
   </div>
 
-  <script>
-const menuToggle=document.querySelector(".menu-toggle");
-const nav=document.querySelector("nav");
-menuToggle.addEventListener("click",()=>nav.classList.toggle("open"));
-nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
-
-document.getElementById("year").textContent=new Date().getFullYear();
-
-const modal=document.getElementById("work-modal");
-const openButtons=document.querySelectorAll(".open-modal");
-const closeModal=()=>{modal.classList.remove("active");modal.setAttribute("aria-hidden","true")};
-openButtons.forEach(btn=>btn.addEventListener("click",()=>{
-  document.getElementById("modal-title").textContent=btn.dataset.title;
-  document.getElementById("modal-type").textContent=btn.dataset.type;
-  document.getElementById("modal-description").textContent=btn.dataset.description;
-  document.getElementById("modal-extra").textContent=btn.dataset.extra || "";
-  modal.classList.add("active");
-  modal.setAttribute("aria-hidden","false");
-}));
-document.querySelector(".modal-close").addEventListener("click",closeModal);
-document.querySelector(".modal-backdrop").addEventListener("click",closeModal);
-document.querySelectorAll(".modal-contact").forEach(a=>a.addEventListener("click",closeModal));
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-
-const contactForm=document.getElementById("contact-form");
-const formStatus=document.getElementById("form-status");
-const submitButton=contactForm.querySelector('button[type="submit"]');
-
-contactForm.addEventListener("submit",async(e)=>{
-  e.preventDefault();
-  formStatus.textContent="";
-  formStatus.className="form-status";
-  submitButton.disabled=true;
-  submitButton.textContent="Enviando...";
-
-  try{
-    const response=await fetch(contactForm.action,{
-      method:contactForm.method,
-      body:new FormData(contactForm),
-      headers:{Accept:"application/json"}
-    });
-
-    if(!response.ok)throw new Error("No se pudo enviar el formulario");
-
-    contactForm.reset();
-    formStatus.textContent="¡Gracias! Tu mensaje fue enviado correctamente.";
-    formStatus.classList.add("success");
-  }catch(error){
-    formStatus.textContent="No pudimos enviar tu mensaje. Por favor, intentá nuevamente.";
-    formStatus.classList.add("error");
-  }finally{
-    submitButton.disabled=false;
-    submitButton.textContent="Enviar mensaje";
-  }
-});
-
-</script>
+  <script src="script.js"></script>
 </body>
 </html>

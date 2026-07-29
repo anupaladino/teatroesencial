@@ -30,7 +30,7 @@ nav{display:flex;gap:24px;align-items:center;font-size:.9rem}nav a:hover{opacity
 .empty-state{border:1px solid var(--line);padding:5vw;text-align:center}.empty-state span{font-size:.7rem;letter-spacing:.15em;color:var(--accent)}.empty-state h3{font-family:"Playfair Display",serif;font-size:2.5rem;margin:.4em 0}
 .author-section{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;background:#e6ded1}.author-copy{font-family:"Playfair Display",serif;font-size:clamp(1.7rem,3vw,3rem);line-height:1.15}
 .rights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:40px 0}.rights-grid>div{border-top:1px solid var(--ink);padding-top:20px}.step{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:.8rem}.rights-grid h3{font-family:"Playfair Display",serif;font-size:1.8rem}.rights-grid p{color:var(--muted)}
-.contact-section{background:#fff}.contact-form{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px}.contact-form label{display:flex;flex-direction:column;gap:8px;font-size:.85rem;font-weight:600}.contact-form .full{grid-column:1/-1}.contact-form input,.contact-form select,.contact-form textarea{font:inherit;padding:14px;border:1px solid var(--line);background:#faf8f3;border-radius:0}.contact-form .button{width:max-content}.form-note{grid-column:1/-1;color:var(--muted);font-size:.78rem}
+.contact-section{background:#fff}.contact-form{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px}.contact-form label{display:flex;flex-direction:column;gap:8px;font-size:.85rem;font-weight:600}.contact-form .full{grid-column:1/-1}.contact-form input,.contact-form select,.contact-form textarea{font:inherit;padding:14px;border:1px solid var(--line);background:#faf8f3;border-radius:0}.contact-form .button{width:max-content}.contact-form .button:disabled{cursor:wait;opacity:.65}.form-note{grid-column:1/-1;color:var(--muted);font-size:.78rem}.form-status{grid-column:1/-1;margin:0;font-size:.9rem;font-weight:600}.form-status.success{color:#287a3e}.form-status.error{color:var(--accent)}
 footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
 .text-button{border:0;background:none;text-decoration:underline;cursor:pointer}
 .modal{position:fixed;inset:0;display:none;z-index:50}.modal.active{display:block}.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.65)}.modal-panel{position:absolute;right:0;top:0;width:min(650px,92vw);height:100%;background:var(--paper);padding:8vw 5vw 5vw;overflow:auto}.modal-close{position:absolute;top:20px;right:24px;border:0;background:none;font-size:2.3rem;cursor:pointer}.modal h2{font-size:clamp(2.8rem,6vw,5rem)}.modal-description{font-family:"Playfair Display",serif;font-size:1.6rem;line-height:1.25}.modal-extra{color:var(--muted)}.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
@@ -285,14 +285,20 @@ footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;bord
         <h2>Hablemos de historias.</h2>
       </div>
 
-      <form id="contact-form" class="contact-form">
+      <form
+        id="contact-form"
+        class="contact-form"
+        action="https://formspree.io/f/xqernvzg"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="Nueva consulta desde Teatro Esencial" />
         <label>
           Nombre
-          <input type="text" name="nombre" placeholder="Tu nombre" required />
+          <input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required />
         </label>
         <label>
           Email
-          <input type="email" name="email" placeholder="tu@email.com" required />
+          <input type="email" name="email" placeholder="tu@email.com" autocomplete="email" required />
         </label>
         <label>
           Motivo
@@ -311,8 +317,9 @@ footer{padding:30px 4vw;display:flex;justify-content:space-between;gap:20px;bord
           Mensaje
           <textarea name="mensaje" rows="6" placeholder="Contame qué necesitás..." required></textarea>
         </label>
-        <button class="button primary" type="submit">Preparar mensaje</button>
-        <p class="form-note">Esta versión prepara el mensaje en tu programa de correo. Al publicar el sitio podemos conectarlo a un formulario real.</p>
+        <button class="button primary" type="submit">Enviar mensaje</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        <p class="form-note">Los datos enviados se utilizarán únicamente para responder esta consulta.</p>
       </form>
     </section>
   </main>
@@ -362,18 +369,36 @@ document.querySelector(".modal-backdrop").addEventListener("click",closeModal);
 document.querySelectorAll(".modal-contact").forEach(a=>a.addEventListener("click",closeModal));
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 
-document.getElementById("contact-form").addEventListener("submit",(e)=>{
+const contactForm=document.getElementById("contact-form");
+const formStatus=document.getElementById("form-status");
+const submitButton=contactForm.querySelector('button[type="submit"]');
+
+contactForm.addEventListener("submit",async(e)=>{
   e.preventDefault();
-  const data=new FormData(e.target);
-  const subject=encodeURIComponent("Consulta Teatro Esencial — "+(data.get("obra")||data.get("motivo")));
-  const body=encodeURIComponent(
-    "Nombre: "+data.get("nombre")+"\n"+
-    "Email: "+data.get("email")+"\n"+
-    "Motivo: "+data.get("motivo")+"\n"+
-    "Obra: "+data.get("obra")+"\n\n"+
-    data.get("mensaje")
-  );
-  window.location.href=`mailto:?subject=${subject}&body=${body}`;
+  formStatus.textContent="";
+  formStatus.className="form-status";
+  submitButton.disabled=true;
+  submitButton.textContent="Enviando...";
+
+  try{
+    const response=await fetch(contactForm.action,{
+      method:contactForm.method,
+      body:new FormData(contactForm),
+      headers:{Accept:"application/json"}
+    });
+
+    if(!response.ok)throw new Error("No se pudo enviar el formulario");
+
+    contactForm.reset();
+    formStatus.textContent="¡Gracias! Tu mensaje fue enviado correctamente.";
+    formStatus.classList.add("success");
+  }catch(error){
+    formStatus.textContent="No pudimos enviar tu mensaje. Por favor, intentá nuevamente.";
+    formStatus.classList.add("error");
+  }finally{
+    submitButton.disabled=false;
+    submitButton.textContent="Enviar mensaje";
+  }
 });
 
 </script>

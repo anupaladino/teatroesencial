@@ -45,6 +45,27 @@ if (modal && openButtons.length) {
   });
 }
 
+
+const relatosToggle = document.getElementById('toggle-relatos');
+const extraRelatos = document.querySelectorAll('.relato-extra');
+
+if (relatosToggle && extraRelatos.length) {
+  relatosToggle.addEventListener('click', () => {
+    const isExpanded = relatosToggle.getAttribute('aria-expanded') === 'true';
+
+    extraRelatos.forEach((card) => {
+      card.hidden = isExpanded;
+    });
+
+    relatosToggle.setAttribute('aria-expanded', String(!isExpanded));
+    relatosToggle.textContent = isExpanded ? 'Ver los 24 relatos' : 'Mostrar menos';
+
+    if (isExpanded) {
+      document.getElementById('relatos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+}
+
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 const submitButton = contactForm?.querySelector('button[type="submit"]');

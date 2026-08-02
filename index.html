@@ -14,7 +14,7 @@
   <meta property="og:title" content="Teatro Esencial | Relatos y dramaturgia de Hernán Laperuta" />
   <meta property="og:description" content="Relatos breves, teatro breve y obras para leer, imaginar y llevar a escena. Explorá historias donde lo cotidiano se vuelve raro y profundamente humano." />
   <meta property="og:url" content="https://teatroesencial.com.ar/" />
-  <meta property="og:image" content="https://teatroesencial.com.ar/og-teatro-esencial.png" />
+  <meta property="og:image" content="https://teatroesencial.com.ar/assets/images/social/og-teatro-esencial.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="es_AR" />
@@ -22,15 +22,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Teatro Esencial | Relatos y dramaturgia de Hernán Laperuta" />
   <meta name="twitter:description" content="Relatos breves, teatro breve y obras para leer, imaginar y llevar a escena." />
-  <meta name="twitter:image" content="https://teatroesencial.com.ar/og-teatro-esencial.png" />
+  <meta name="twitter:image" content="https://teatroesencial.com.ar/assets/images/social/og-teatro-esencial.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/icons/favicon.png" />
 </head>
 <body>
   <header class="site-header">
@@ -99,90 +98,676 @@
     </section>
 
     <section id="relatos" class="section catalog-section">
-      <div class="section-heading">
-        <p class="eyebrow">RELATOS BREVES</p>
-        <h2>Historias para leer.</h2>
+      <div class="section-heading inline">
+        <div>
+          <p class="eyebrow">RELATOS BREVES</p>
+          <h2>Historias para leer.</h2>
+          <p class="section-intro">Veinticuatro relatos sobre la infancia, los vínculos, el humor, las pérdidas y esas escenas que siguen viviendo en la memoria.</p>
+        </div>
+        <p class="catalog-count">24 relatos</p>
       </div>
 
-      <div class="work-grid">
+      <div class="work-grid" id="relatos-grid">
         <article class="work-card">
-          <div class="cover cover-rain">
-            <span>RELATO</span>
-            <h3>La chica<br />en la lluvia</h3>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/la-chica-en-la-lluvia.webp"
+              alt="Ilustración del relato “La chica en la lluvia”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="work-copy">
             <p class="meta">Relato breve · Nostalgia</p>
             <h3>La chica en la lluvia</h3>
-            <p>Una escena bajo la lluvia despierta una revelación simple, íntima y profundamente humana.</p>
+            <p>Una tormenta de verano convierte una espera tediosa en una revelación sobre la juventud, la libertad y las personas que alguna vez fuimos.</p>
             <div class="card-actions">
-              <button class="button small primary open-modal"
+              <button
+                class="button small primary open-modal"
+                type="button"
                 data-title="La chica en la lluvia"
-                data-type="Relato breve"
-                data-description="Una escena cotidiana bajo una lluvia intensa se transforma en una mirada sobre el paso del tiempo, la memoria y aquello que alguna vez fuimos."
-                data-extra="Lectura estimada: 10–15 minutos">Conocer el relato</button>
+                data-type="Relato breve · Nostalgia"
+                data-description="Durante una tarde sofocante en Belgrano, un niño y su madre esperan frente a un banco cuando una joven aparece bajo el diluvio, feliz y despreocupada. Una frase inesperada transforma esa escena cotidiana en un recuerdo sobre el paso del tiempo, la adultez y la libertad que a veces dejamos atrás."
+                data-extra="Lectura estimada: 5 minutos"
+              >Conocer el relato</button>
             </div>
           </div>
         </article>
-
         <article class="work-card">
-          <div class="cover cover-bigben">
-            <span>RELATO</span>
-            <h3>Las 12<br />del Big Ben</h3>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/las-12-del-big-ben.webp"
+              alt="Ilustración del relato “Las 12 del Big Ben”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="work-copy">
-            <p class="meta">Relato breve · Memoria</p>
+            <p class="meta">Relato breve · Vocación y teatro</p>
             <h3>Las 12 del Big Ben</h3>
-            <p>Un viaje juvenil a Inglaterra y el descubrimiento de una pasión capaz de cambiar una vida.</p>
+            <p>Un viaje de rugby a Londres se convierte en una señal decisiva sobre el teatro, la vocación y la necesidad de no soltar las pasiones.</p>
             <div class="card-actions">
-              <button class="button small primary open-modal"
+              <button
+                class="button small primary open-modal"
+                type="button"
                 data-title="Las 12 del Big Ben"
-                data-type="Relato breve"
-                data-description="Durante un viaje de rugby a las Islas Británicas, un joven descubre el teatro musical y comprende que algunas pasiones aparecen una sola vez y dejan marca para siempre."
-                data-extra="Lectura estimada: 15–20 minutos">Conocer el relato</button>
+                data-type="Relato breve · Vocación y teatro"
+                data-description="A los dieciocho años, durante el final de una gira de rugby por las islas británicas, Hernán descubre que en Londres se presenta el mismo musical que acaba de protagonizar en el colegio. Entre una entrada imposible, una noche frente al Big Ben y un gesto de amistad, el viaje termina marcando el rumbo de su vida."
+                data-extra="Lectura estimada: 9 minutos"
+              >Conocer el relato</button>
             </div>
           </div>
         </article>
-
         <article class="work-card">
-          <div class="cover cover-korea">
-            <span>RELATO</span>
-            <h3>Un cuento<br />coreano</h3>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/un-cuento-coreano.webp"
+              alt="Ilustración del relato “Un cuento coreano”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="work-copy">
             <p class="meta">Relato breve · Humor negro</p>
             <h3>Un cuento coreano</h3>
-            <p>Una noche de 1993, un auto, una pelea callejera y una historia que escala más de lo esperado.</p>
+            <p>Un choque menor en la Buenos Aires de los noventa escala hasta convertirse en una pelea callejera tan violenta como absurda.</p>
             <div class="card-actions">
-              <button class="button small primary open-modal"
+              <button
+                class="button small primary open-modal"
+                type="button"
                 data-title="Un cuento coreano"
-                data-type="Relato breve"
-                data-description="Una situación absurda y tensa, narrada con humor negro, donde un incidente callejero se convierte en una pequeña fábula urbana."
-                data-extra="Ambientado en 1993">Conocer el relato</button>
+                data-type="Relato breve · Humor negro"
+                data-description="Una noche de 1993, un Fiat Spazio, un Ford Sierra y una maniobra imprudente desencadenan una discusión que rápidamente se sale de control. Entre golpes, un rescatista inesperado y la llegada de la policía, el relato combina tensión, humor negro y una reflexión sobre la violencia al volante y el alcohol."
+                data-extra="Lectura estimada: 7 minutos"
+              >Conocer el relato</button>
             </div>
           </div>
         </article>
-
         <article class="work-card">
-          <div class="cover cover-beach">
-            <span>RELATO</span>
-            <h3>La 303<br />en Mar del Plata</h3>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/la-303-en-mar-del-plata.webp"
+              alt="Ilustración del relato “La 303 en Mar del Plata”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="work-copy">
             <p class="meta">Relato breve · Memoria familiar</p>
             <h3>La 303 en Mar del Plata</h3>
-            <p>Veranos, familia y una carpa de playa convertida en territorio de la memoria.</p>
+            <p>Una carpa de Punta Mogotes guarda los veranos, los afectos y las pequeñas aventuras de una familia que ya vive en la memoria.</p>
             <div class="card-actions">
-              <button class="button small primary open-modal"
+              <button
+                class="button small primary open-modal"
+                type="button"
                 data-title="La 303 en Mar del Plata"
-                data-type="Relato breve"
-                data-description="Un relato de infancia y nostalgia alrededor de los veranos familiares en Punta Mogotes y una carpa que termina guardando mucho más que objetos."
-                data-extra="Memoria autobiográfica">Conocer el relato</button>
+                data-type="Relato breve · Memoria familiar"
+                data-description="La carpa 303, un departamento demasiado pequeño y los viajes de enero a Mar del Plata reúnen una colección de recuerdos familiares: playa, primas, abuelos, primeras salidas y rituales de vacaciones. Escrito como homenaje a su tía Silvia, el relato reconstruye una infancia que permanece viva frente al mar."
+                data-extra="Lectura estimada: 7 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/campeones-inesperados.webp"
+              alt="Ilustración del relato “Campeones inesperados”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Amistad y revancha</p>
+            <h3>Campeones inesperados</h3>
+            <p>Un equipo de amigos acostumbrado a quedar fuera de la foto desafía a los favoritos en un torneo de exalumnos.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Campeones inesperados"
+                data-type="Relato breve · Amistad y revancha"
+                data-description="Años después de compartir colegio sin pertenecer al grupo de los populares, un equipo de amigos llega con camisetas improvisadas a un torneo de exalumnos. Frente a rivales mejor equipados y una final preparada para otros, la experiencia se convierte en una revancha deportiva sobre la amistad, los prejuicios y el valor de jugar juntos."
+                data-extra="Lectura estimada: 11 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/monica-en-el-borde-de-la-pileta.webp"
+              alt="Ilustración del relato “Mónica en el borde de la pileta”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Adolescencia y autoestima</p>
+            <h3>Mónica en el borde de la pileta</h3>
+            <p>En el momento más incómodo de la adolescencia, una conversación junto a una pileta puede cambiar la forma de mirarse para siempre.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Mónica en el borde de la pileta"
+                data-type="Relato breve · Adolescencia y autoestima"
+                data-description="Con catorce años, sobrepeso y una autoestima frágil, Hernán atraviesa una tarde en la que quisiera desaparecer. La llegada de Mónica al borde de la pileta transforma ese momento de vergüenza en un recuerdo luminoso sobre la aceptación, la autenticidad y las personas que nos ayudan a construir una versión más segura de nosotros mismos."
+                data-extra="Lectura estimada: 11 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/cumpleanos-en-glew.webp"
+              alt="Ilustración del relato “Cumpleaños en Glew”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Infancia y fútbol</p>
+            <h3>Cumpleaños en Glew</h3>
+            <p>Un cumpleaños reúne en una quinta a dos mundos distintos y convierte un partido de fútbol en una lección sobre amistad y generosidad.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Cumpleaños en Glew"
+                data-type="Relato breve · Infancia y fútbol"
+                data-description="En la quinta familiar de Glew, los amigos del colegio de Belgrano conocen a los chicos del barrio con quienes Hernán juega cada domingo. Entre barro, regalos, pelotas usadas y un partido compartido, el festejo revela diferencias sociales, afectos genuinos y el origen de una memoria futbolera que vuelve con cada Mundial."
+                data-extra="Lectura estimada: 8 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/forasteros-en-bonifacio.webp"
+              alt="Ilustración del relato “Forasteros en Bonifacio”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Amistad y libertad</p>
+            <h3>Forasteros en Bonifacio</h3>
+            <p>Dos adolescentes porteños descubren en un pequeño pueblo una amistad, una noche de libertad y un mundo que nunca olvidarán.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Forasteros en Bonifacio"
+                data-type="Relato breve · Amistad y libertad"
+                data-description="Los viajes de infancia a Bonifacio crean una amistad improbable entre familias de mundos muy distintos. Años después, una primera salida nocturna, un boliche de pueblo y una madrugada inolvidable convierten a Hernán y Zenón en forasteros de una historia sobre libertad, pertenencia, pérdidas y seres queridos que alguna vez estuvieron a un mate de distancia."
+                data-extra="Lectura estimada: 11 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/la-liebre-y-el-hombre.webp"
+              alt="Ilustración del relato “La liebre y el hombre”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Infancia y masculinidad</p>
+            <h3>La liebre y el hombre</h3>
+            <p>Un viaje de caza pensado para “hacer hombre” a un niño termina cuestionando qué significa realmente crecer.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="La liebre y el hombre"
+                data-type="Relato breve · Infancia y masculinidad"
+                data-description="Con seis años, Hernán acompaña a su padre y a un grupo de adultos en una expedición de caza y pesca destinada a endurecerlo. Cuando debe enfrentarse de cerca con una liebre herida, la aventura cambia de tono y deja una marca profunda sobre el miedo, la compasión y los rituales con los que otros intentan definir la masculinidad."
+                data-extra="Lectura estimada: 8 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/el-diablo-en-la-luna.webp"
+              alt="Ilustración del relato “El diablo en la luna”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Infancia y separación</p>
+            <h3>El diablo en la luna</h3>
+            <p>La última Navidad de una familia unida queda suspendida entre un juguete roto, el silencio de los grillos y una figura en la luna.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="El diablo en la luna"
+                data-type="Relato breve · Infancia y separación"
+                data-description="Durante la noche en que la separación de sus padres se vuelve inevitable, un niño intenta comprender un hogar que comienza a desarmarse. Un auto a control remoto, el llanto de su padre, una cortina abierta y una silueta recortada contra la luna construyen un recuerdo íntimo donde el miedo real y el imaginado se vuelven indistinguibles."
+                data-extra="Lectura estimada: 8 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/el-mejicano-de-hilo.webp"
+              alt="Ilustración del relato “El mejicano de hilo pistolero”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Docencia y autoestima</p>
+            <h3>El mejicano de hilo pistolero</h3>
+            <p>El logro de una alumna despierta el recuerdo de una maestra, un muñeco imperfecto y el abrazo que cambió una mirada.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="El mejicano de hilo pistolero"
+                data-type="Relato breve · Docencia y autoestima"
+                data-description="Al celebrar el esfuerzo de una alumna, Hernán vuelve a un festival de arte de su infancia y al temor de presentar un muñeco que consideraba desastroso. La mirada afectuosa de su maestra Marta convierte aquella creación imperfecta en algo único y revela, décadas después, el poder que tiene un adulto cuando acompaña con atención y amor."
+                data-extra="Lectura estimada: 16 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/empanadas-de-carne-sonrientes.webp"
+              alt="Ilustración del relato “Empanadas de carne sonrientes”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Humor absurdo</p>
+            <h3>Empanadas de carne sonrientes</h3>
+            <p>Una emergencia en plena calle reúne primeros auxilios, tensión y una docena de empanadas gigantes en una escena imposible de sostener con seriedad.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Empanadas de carne sonrientes"
+                data-type="Relato breve · Humor absurdo"
+                data-description="Al encontrar a un hombre inconsciente en una esquina de Belgrano, Hernán intenta aplicar primeros auxilios mientras espera la ambulancia. El problema es que la víctima está rodeada por promotores disfrazados de empanadas gigantes. La situación mezcla responsabilidad, nervios y un remate inesperado en una de esas escenas donde la realidad supera cualquier ficción."
+                data-extra="Lectura estimada: 31 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/los-cuerpos-se-cuentan-frios.webp"
+              alt="Ilustración del relato “Los cuerpos se cuentan fríos”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Humor y superstición</p>
+            <h3>Los cuerpos se cuentan fríos</h3>
+            <p>Cuando un viaje de egresados parece terminar sin problemas, una frase demasiado optimista recuerda por qué nunca conviene festejar antes de tiempo.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Los cuerpos se cuentan fríos"
+                data-type="Relato breve · Humor y superstición"
+                data-description="Después de acompañar a ciento cuarenta adolescentes y sobrevivir a una semana intensa, el vuelo de regreso parece cerrar una misión perfecta. Pero una docente pronuncia la frase prohibida antes de aterrizar y desata una cadena de turbulencias, gritos y vómitos que confirma una vieja regla: en Argentina, el partido no termina hasta que termina."
+                data-extra="Lectura estimada: 9 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/los-mellizos.webp"
+              alt="Ilustración del relato “Los mellizos”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Duelo y espiritualidad</p>
+            <h3>Los mellizos</h3>
+            <p>Durante la búsqueda de su padre, una consulta desesperada revela una historia familiar silenciada y una inesperada forma de despedida.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Los mellizos"
+                data-type="Relato breve · Duelo y espiritualidad"
+                data-description="Con su padre desaparecido en el desierto de San Juan y las esperanzas agotándose, Hernán recurre a una vidente. La aparición de dos pequeñas presencias lo conecta con unos hermanos mellizos muertos antes de su nacimiento y abre una interpretación espiritual sobre el duelo, los secretos familiares y los ciclos que finalmente encuentran una forma de cerrarse."
+                data-extra="Lectura estimada: 4 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/ojitos-intados.webp"
+              alt="Ilustración del relato “Ojitos pintados”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Teatro y memoria</p>
+            <h3>Ojitos pintados</h3>
+            <p>Los minutos previos a una función reúnen nervios, maquillaje y generaciones de alumnos que encontraron algo propio sobre un escenario.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Ojitos pintados"
+                data-type="Relato breve · Teatro y memoria"
+                data-description="Después de años dirigiendo comedias musicales en colegios, Hernán reconstruye el instante previo a la apertura del telón: la última charla, las dudas, los vestuarios y los ojos maquillados de quienes están por salir a escena. Un homenaje a los elencos, a los vínculos nacidos en el teatro y a una memoria que vuelve con su olor inconfundible."
+                data-extra="Lectura estimada: 5 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/padrino-sabio.webp"
+              alt="Ilustración del relato “Padrino sabio”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Decisiones de vida</p>
+            <h3>Padrino sabio</h3>
+            <p>Una frase pronunciada en un funeral obliga a elegir entre continuar un camino que enferma o animarse a vivir otra vida.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Padrino sabio"
+                data-type="Relato breve · Decisiones de vida"
+                data-description="Durante los últimos años de medicina, una enfermedad psicosomática convierte la rutina de Hernán en una pesadilla. En el funeral de la madre de su padrino, una pregunta directa —y el recordatorio de que la vida es una sola— le permiten tomar la decisión de abandonar una profesión que lo estaba destruyendo y empezar un camino más propio."
+                data-extra="Lectura estimada: 3 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/pequenas-almas.webp"
+              alt="Ilustración del relato “Pequeñas almas”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Docencia y afecto</p>
+            <h3>Pequeñas almas</h3>
+            <p>Enseñar también significa acompañar, despedirse cada año y aceptar que, a veces, los alumnos sostienen a quien debería guiarlos.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Pequeñas almas"
+                data-type="Relato breve · Docencia y afecto"
+                data-description="Ser docente implica mucho más que transmitir contenidos: es observar, acompañar, poner límites y atravesar cientos de pequeños duelos al final de cada ciclo. A partir de una pérdida personal y del afecto recibido en el aula, el relato muestra cómo el vínculo educativo puede convertirse en un intercambio genuino de cuidado y humanidad."
+                data-extra="Lectura estimada: 5 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/protagonista-en-el-desierto.webp"
+              alt="Ilustración del relato “Protagonista en el desierto”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Duelo y búsqueda</p>
+            <h3>Protagonista en el desierto</h3>
+            <p>La desaparición de su padre obliga a un hijo a ocupar el centro de una historia que nunca quiso protagonizar.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Protagonista en el desierto"
+                data-type="Relato breve · Duelo y búsqueda"
+                data-description="Cuando su padre desaparece en el desierto de San Juan, Hernán queda al frente de una búsqueda que lentamente se transforma en la recuperación de un cuerpo. Avionetas, policías, dudas y trámites componen una película íntima de terror y duelo, cuyo final deja más silencios que respuestas y un paisaje imposible de olvidar."
+                data-extra="Lectura estimada: 8 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/pupilo-en-inglaterra.webp"
+              alt="Ilustración del relato “Pupilo en Inglaterra”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Viajes y hospitalidad</p>
+            <h3>Pupilo en Inglaterra</h3>
+            <p>Una gira de rugby y una casa de familia demasiado fría enseñan que la hospitalidad puede aparecer donde menos se espera.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Pupilo en Inglaterra"
+                data-type="Relato breve · Viajes y hospitalidad"
+                data-description="Durante una gira escolar por Inglaterra, Hernán se hospeda con un jugador de un colegio pupilo y descubre una rutina distante, silenciosa y cargada de historia. En medio de esa experiencia incómoda, otra persona le ofrece la calidez que necesitaba y convierte el final del viaje en una reflexión sobre los gestos capaces de hacernos sentir en casa."
+                data-extra="Lectura estimada: 11 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/siete-pisos.webp"
+              alt="Ilustración del relato “Siete pisos”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Amor y vulnerabilidad</p>
+            <h3>Siete pisos</h3>
+            <p>El recuerdo de un primer beso se convierte en una metáfora sobre todos los miedos que hay que atravesar para animarse a sentir.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Siete pisos"
+                data-type="Relato breve · Amor y vulnerabilidad"
+                data-description="A los quince años, la inseguridad, el deseo y una educación sentimental hecha de televisión convierten el primer acercamiento amoroso en una experiencia vertiginosa. Con el tiempo, esos “siete pisos” se vuelven una imagen para hablar de autoestima, abandono, errores y del salto necesario para amar, crear o mostrarse frente a otros."
+                data-extra="Lectura estimada: 10 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/silencios.webp"
+              alt="Ilustración del relato “Silencios”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Amor y abandono</p>
+            <h3>Silencios</h3>
+            <p>Cuando alguien desaparece sin explicar nada, el silencio deja de ser vacío y se llena de preguntas, fantasmas y versiones imposibles.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Silencios"
+                data-type="Relato breve · Amor y abandono"
+                data-description="A partir del ghosting y de una historia afectiva interrumpida, el relato discute la idea de que el silencio puede comunicar por sí solo. Lo que para una persona es ausencia, para la otra se convierte en un espacio ocupado por dudas, recuerdos y una canción de amor que termina cantando una sola voz."
+                data-extra="Lectura estimada: 5 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/un-angel-en-la-morgue.webp"
+              alt="Ilustración del relato “Un ángel en la morgue”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Amor y vocación</p>
+            <h3>Un ángel en la morgue</h3>
+            <p>Entre cuerpos, formol y pasillos oscuros, un estudiante de medicina encuentra una presencia capaz de cambiarle la vida.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Un ángel en la morgue"
+                data-type="Relato breve · Amor y vocación"
+                data-description="Como ayudante de anatomía, Hernán pasa horas entre preparados, piletones y cuerpos en la morgue universitaria. En el lugar menos esperado aparece una persona que le devuelve libertad, afecto y sentido. El relato transforma un escenario dominado por la muerte en el comienzo de una historia de amor destinada a quedarse."
+                data-extra="Lectura estimada: 7 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/y-ella-no-estaba-alli.webp"
+              alt="Ilustración del relato “Y ella no estaba allí”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Amor y ausencia</p>
+            <h3>Y ella no estaba allí</h3>
+            <p>Un hombre viaja cada año hacia el lugar donde cree que encontrará a la mujer que ama, aunque nadie más recuerde que haya existido.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Y ella no estaba allí"
+                data-type="Relato breve · Amor y ausencia"
+                data-description="Guiado por una certeza amorosa, un hombre recorre kilómetros para reencontrarse con una mujer que da sentido a su vida. Cuando llega a la escollera, ella no está y nadie parece conocerla. Entre memoria, obsesión y misterio, la búsqueda se convierte en un ritual que se repite durante veinte años frente al amanecer."
+                data-extra="Lectura estimada: 4 minutos"
+              >Conocer el relato</button>
+            </div>
+          </div>
+        </article>
+        <article class="work-card relato-extra" hidden>
+          <div class="work-card-media">
+            <img
+              src="assets/images/relatos/yo-y-mi-chica.webp"
+              alt="Ilustración del relato “Yo y mi chica”"
+              width="1200"
+              height="720"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="work-copy">
+            <p class="meta">Relato breve · Teatro y vocación</p>
+            <h3>Yo y mi chica</h3>
+            <p>Una audición escolar inesperada abre la puerta a un escenario, una comunidad y una vocación que nunca dejará de regresar.</p>
+            <div class="card-actions">
+              <button
+                class="button small primary open-modal"
+                type="button"
+                data-title="Yo y mi chica"
+                data-type="Relato breve · Teatro y vocación"
+                data-description="Después de descubrir la intensidad del teatro desde afuera, Hernán se presenta sin grandes expectativas a la audición de “Yo y mi chica”. El proceso lo conecta con un mundo de amistades, riesgo y creación que seguirá apareciendo incluso cuando intente alejarse. Una memoria sobre el momento en que el arte deja de ser curiosidad y se vuelve camino."
+                data-extra="Lectura estimada: 7 minutos"
+              >Conocer el relato</button>
             </div>
           </div>
         </article>
       </div>
-    </section>
 
+      <div class="catalog-actions">
+        <button
+          class="button secondary"
+          id="toggle-relatos"
+          type="button"
+          aria-expanded="false"
+          aria-controls="relatos-grid"
+        >Ver los 24 relatos</button>
+      </div>
+    </section>
     <section id="teatro-breve" class="section dark-section">
       <div class="section-heading">
         <p class="eyebrow">TEATRO BREVE</p>
@@ -311,6 +896,25 @@
         </div>
         <p id="form-status" class="form-status full" role="status" aria-live="polite"></p>
       </form>
+
+      <div class="social-presence">
+        <p class="eyebrow">MÁS HISTORIAS</p>
+        <h3>También podés encontrar Teatro Esencial en:</h3>
+        <div class="social-buttons">
+          <a
+            class="button secondary"
+            href="https://www.instagram.com/teatro.esencial"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Seguir en Instagram</a>
+          <a
+            class="button secondary"
+            href="https://open.spotify.com/show/7xMKDr7wMTTB1g6M66qWaq"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Escuchar el podcast en Spotify</a>
+        </div>
+      </div>
     </section>
   </main>
 

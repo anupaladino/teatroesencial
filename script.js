@@ -45,30 +45,31 @@ if (modal && openButtons.length) {
   });
 }
 
-
-const relatosToggle = document.getElementById('toggle-relatos');
-const extraRelatos = document.querySelectorAll('.relato-extra');
-
-if (relatosToggle && extraRelatos.length) {
-  relatosToggle.addEventListener('click', () => {
-    const isExpanded = relatosToggle.getAttribute('aria-expanded') === 'true';
-
-    extraRelatos.forEach((card) => {
-      card.hidden = isExpanded;
-    });
-
-    relatosToggle.setAttribute('aria-expanded', String(!isExpanded));
-    relatosToggle.textContent = isExpanded ? 'Ver los 24 relatos' : 'Mostrar menos';
-
-    if (isExpanded) {
-      document.getElementById('relatos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-}
-
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 const submitButton = contactForm?.querySelector('button[type="submit"]');
+const workContactLinks = document.querySelectorAll('[data-contact-work]');
+const contactMotive = contactForm?.querySelector('select[name="motivo"]');
+const contactWork = contactForm?.querySelector('input[name="obra"]');
+const contactMessage = contactForm?.querySelector('textarea[name="mensaje"]');
+
+workContactLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    const workTitle = link.dataset.contactWork;
+
+    if (contactMotive) {
+      contactMotive.value = 'Derechos de representación';
+    }
+
+    if (contactWork && workTitle) {
+      contactWork.value = workTitle;
+    }
+
+    if (contactMessage && workTitle) {
+      contactMessage.value = `Me interesa consultar la disponibilidad y los derechos de representación de ${workTitle}.`;
+    }
+  });
+});
 
 if (contactForm && formStatus && submitButton) {
   contactForm.addEventListener('submit', async (event) => {

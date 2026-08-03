@@ -18,6 +18,7 @@ const openButtons = document.querySelectorAll('.open-modal');
 const modalCloseButton = document.querySelector('.modal-close');
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const modalContactLinks = document.querySelectorAll('.modal-contact');
+const modalReadLink = document.getElementById('modal-read-link');
 
 const closeModal = () => {
   if (!modal) return;
@@ -32,6 +33,18 @@ if (modal && openButtons.length) {
       document.getElementById('modal-type').textContent = button.dataset.type;
       document.getElementById('modal-description').textContent = button.dataset.description;
       document.getElementById('modal-extra').textContent = button.dataset.extra || '';
+
+      const readUrl = button.dataset.readUrl;
+      if (modalReadLink) {
+        if (readUrl) {
+          modalReadLink.href = readUrl;
+          modalReadLink.hidden = false;
+        } else {
+          modalReadLink.removeAttribute('href');
+          modalReadLink.hidden = true;
+        }
+      }
+
       modal.classList.add('active');
       modal.setAttribute('aria-hidden', 'false');
     });
@@ -42,6 +55,30 @@ if (modal && openButtons.length) {
   modalContactLinks.forEach((link) => link.addEventListener('click', closeModal));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeModal();
+  });
+}
+
+
+const relatosToggle = document.getElementById('toggle-relatos');
+const extraRelatos = Array.from(document.querySelectorAll('#relatos-grid .relato-extra'));
+
+if (relatosToggle && extraRelatos.length) {
+  relatosToggle.addEventListener('click', () => {
+    const willExpand = relatosToggle.getAttribute('aria-expanded') !== 'true';
+
+    extraRelatos.forEach((card) => {
+      card.hidden = !willExpand;
+    });
+
+    relatosToggle.setAttribute('aria-expanded', String(willExpand));
+    relatosToggle.textContent = willExpand ? 'Mostrar menos' : 'Ver los 24 relatos';
+
+    if (!willExpand) {
+      document.getElementById('relatos')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   });
 }
 

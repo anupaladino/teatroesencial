@@ -35,9 +35,11 @@ if (modal && openButtons.length) {
       document.getElementById('modal-extra').textContent = button.dataset.extra || '';
 
       const readUrl = button.dataset.readUrl;
+      const readLabel = button.dataset.readLabel || 'Leer el relato';
       if (modalReadLink) {
         if (readUrl) {
           modalReadLink.href = readUrl;
+          modalReadLink.textContent = readLabel;
           modalReadLink.hidden = false;
         } else {
           modalReadLink.removeAttribute('href');
@@ -75,6 +77,35 @@ if (relatosToggle && extraRelatos.length) {
 
     if (!willExpand) {
       document.getElementById('relatos')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+}
+
+
+
+const teatroBreveToggle = document.getElementById('toggle-teatro-breve');
+const extraTeatroBreve = Array.from(
+  document.querySelectorAll('#teatro-breve-grid .teatro-breve-extra')
+);
+
+if (teatroBreveToggle && extraTeatroBreve.length) {
+  teatroBreveToggle.addEventListener('click', () => {
+    const willExpand = teatroBreveToggle.getAttribute('aria-expanded') !== 'true';
+
+    extraTeatroBreve.forEach((card) => {
+      card.hidden = !willExpand;
+    });
+
+    teatroBreveToggle.setAttribute('aria-expanded', String(willExpand));
+    teatroBreveToggle.textContent = willExpand
+      ? 'Mostrar menos'
+      : 'Ver las 31 obras breves';
+
+    if (!willExpand) {
+      document.getElementById('teatro-breve')?.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });

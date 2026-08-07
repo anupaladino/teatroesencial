@@ -1014,3 +1014,93 @@ footer {
   }
 }
 
+/* Teatro breve — catálogo de 31 obras */
+.short-theatre-section .section-intro,
+.short-theatre-section .catalog-count {
+  color: #d3cec6;
+}
+
+.short-theatre-section .work-card {
+  display: flex;
+  flex-direction: column;
+  background: #242424;
+  border-color: #444;
+}
+
+.short-theatre-section .work-card-media {
+  background: #1a1a1a;
+}
+
+.short-theatre-section .work-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.short-theatre-section .work-copy .meta {
+  color: #e5a59f;
+}
+
+.short-theatre-section .work-copy h3 {
+  color: var(--paper);
+}
+
+.short-theatre-section .work-copy > p:not(.meta) {
+  color: #c9c3ba;
+}
+
+.short-theatre-section .card-actions {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.short-theatre-section .button.secondary.light {
+  border-color: #777;
+}
+
+/* Leitura de dramaturgia */
+.script-body {
+  max-width: 900px;
+  font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+  line-height: 1.7;
+}
+
+.script-body p {
+  margin: 0 0 1em;
+}
+
+.script-body .script-dialogue {
+  padding-left: 1.35rem;
+  text-indent: -1.35rem;
+}
+
+.script-body .script-speaker {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.script-body .stage-direction,
+.script-body .script-note {
+  margin: 1.45em 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.script-body .script-heading {
+  margin: 2.6em 0 1.3em;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 560px) {
+  .script-body .script-dialogue {
+    padding-left: 1rem;
+    text-indent: -1rem;
+  }
+}

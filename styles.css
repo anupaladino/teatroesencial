@@ -1104,3 +1104,9 @@ footer {
     text-indent: -1rem;
   }
 }
+
+/* Estado inicial dos catálogos expansíveis */
+.relato-extra[hidden],
+.teatro-breve-extra[hidden] {
+  display: none !important;
+}

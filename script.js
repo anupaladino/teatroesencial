@@ -65,6 +65,12 @@ const relatosToggle = document.getElementById('toggle-relatos');
 const extraRelatos = Array.from(document.querySelectorAll('#relatos-grid .relato-extra'));
 
 if (relatosToggle && extraRelatos.length) {
+  extraRelatos.forEach((card) => {
+    card.hidden = true;
+  });
+  relatosToggle.setAttribute('aria-expanded', 'false');
+  relatosToggle.textContent = 'Ver todos los relatos';
+
   relatosToggle.addEventListener('click', () => {
     const willExpand = relatosToggle.getAttribute('aria-expanded') !== 'true';
 
@@ -73,7 +79,7 @@ if (relatosToggle && extraRelatos.length) {
     });
 
     relatosToggle.setAttribute('aria-expanded', String(willExpand));
-    relatosToggle.textContent = willExpand ? 'Mostrar menos' : 'Ver los 24 relatos';
+    relatosToggle.textContent = willExpand ? 'Mostrar menos' : 'Ver todos los relatos';
 
     if (!willExpand) {
       document.getElementById('relatos')?.scrollIntoView({
@@ -92,6 +98,12 @@ const extraTeatroBreve = Array.from(
 );
 
 if (teatroBreveToggle && extraTeatroBreve.length) {
+  extraTeatroBreve.forEach((card) => {
+    card.hidden = true;
+  });
+  teatroBreveToggle.setAttribute('aria-expanded', 'false');
+  teatroBreveToggle.textContent = 'Explorar el catálogo completo';
+
   teatroBreveToggle.addEventListener('click', () => {
     const willExpand = teatroBreveToggle.getAttribute('aria-expanded') !== 'true';
 
@@ -102,7 +114,7 @@ if (teatroBreveToggle && extraTeatroBreve.length) {
     teatroBreveToggle.setAttribute('aria-expanded', String(willExpand));
     teatroBreveToggle.textContent = willExpand
       ? 'Mostrar menos'
-      : 'Ver las 31 obras breves';
+      : 'Explorar el catálogo completo';
 
     if (!willExpand) {
       document.getElementById('teatro-breve')?.scrollIntoView({

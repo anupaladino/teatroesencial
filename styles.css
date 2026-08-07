@@ -529,25 +529,88 @@ nav a:hover {
 
 .author-section {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 8vw;
+  grid-template-columns: minmax(320px, 400px) minmax(0, 1fr);
+  column-gap: clamp(48px, 6vw, 92px);
+  row-gap: 18px;
+  align-items: start;
+  padding-top: clamp(72px, 6vw, 96px);
+  padding-bottom: clamp(72px, 6vw, 96px);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: #e6ded1;
 }
 
+.author-intro {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  align-self: end;
+}
+
 .author-section h2 {
-  font-size: clamp(3.4rem, 7vw, 7rem);
+  max-width: 9ch;
+  margin-bottom: 0;
+  font-size: clamp(4rem, 5.2vw, 5.5rem);
+}
+
+.author-photo {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  border: 1px solid rgba(19, 19, 19, 0.12);
+  background: #c8c8c8;
+}
+
+.author-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-copy {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  max-width: 760px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.12rem, 1.35vw, 1.32rem);
+  font-weight: 400;
+  line-height: 1.58;
+  letter-spacing: 0.002em;
+}
+
+.author-copy p {
+  margin: 0;
+}
+
+.author-socials {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.author-socials a {
+  padding-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.2s ease;
+}
+
+.author-socials a:hover {
+  opacity: 0.55;
 }
 
 .rights-section {
   background: #e6ded1;
-}
-
-.author-copy {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(1.7rem, 3vw, 3rem);
-  line-height: 1.15;
 }
 
 .rights-grid {
@@ -815,6 +878,21 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .author-intro,
+  .author-photo,
+  .author-copy {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .author-photo {
+    max-width: 420px;
+  }
+
+  .author-section h2 {
+    max-width: 7ch;
+  }
+
   .theatre-work.reverse .theatre-work-media,
   .theatre-work.reverse .theatre-work-copy {
     order: initial;
@@ -878,19 +956,26 @@ footer {
 
 .reader-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
-  gap: 6vw;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  gap: clamp(40px, 5vw, 88px);
   align-items: center;
   padding: 7vw 6vw 5vw;
 }
 
+.reader-heading,
+.reader-cover {
+  min-width: 0;
+}
+
 .reader-heading h1 {
-  max-width: 780px;
+  max-width: 100%;
   margin: 0.18em 0;
   font-family: "Playfair Display", serif;
-  font-size: clamp(3.3rem, 7vw, 7rem);
+  font-size: clamp(3.15rem, 5.4vw, 6rem);
   font-weight: 600;
-  line-height: 0.94;
+  line-height: 0.96;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .reader-byline {
@@ -1109,4 +1194,32 @@ footer {
 .relato-extra[hidden],
 .teatro-breve-extra[hidden] {
   display: none !important;
+}
+
+
+/* Final responsive safeguards for long work titles */
+.modal h2 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+@media (max-width: 900px) {
+  .author-photo {
+    max-width: 440px;
+  }
+}
+
+@media (max-width: 560px) {
+  .author-section h2 {
+    max-width: none;
+  }
+
+  .author-photo {
+    max-width: 100%;
+  }
+
+  .author-copy {
+    font-size: 1.14rem;
+  }
 }

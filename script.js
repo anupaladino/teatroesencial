@@ -34,6 +34,11 @@ if (modal && openButtons.length) {
       document.getElementById('modal-description').textContent = button.dataset.description;
       document.getElementById('modal-extra').textContent = button.dataset.extra || '';
 
+      const modalRightsLink = modal.querySelector('.modal-rights-contact');
+      if (modalRightsLink) {
+        modalRightsLink.dataset.contactWork = button.dataset.title || '';
+      }
+
       const readUrl = button.dataset.readUrl;
       const readLabel = button.dataset.readLabel || 'Leer el relato';
       if (modalReadLink) {
@@ -128,7 +133,7 @@ if (teatroBreveToggle && extraTeatroBreve.length) {
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 const submitButton = contactForm?.querySelector('button[type="submit"]');
-const workContactLinks = document.querySelectorAll('[data-contact-work]');
+const workContactLinks = document.querySelectorAll('[data-contact-work], .modal-rights-contact');
 const contactMotive = contactForm?.querySelector('select[name="motivo"]');
 const contactWork = contactForm?.querySelector('input[name="obra"]');
 const contactMessage = contactForm?.querySelector('textarea[name="mensaje"]');
